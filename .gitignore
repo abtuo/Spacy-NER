@@ -1,0 +1,7 @@
+*test*
+**/data/*
+data/*
+*.spacy
+fruitful*
+**/checkpoint/*
+**/output/*

@@ -39,7 +39,7 @@ options = {
 }
 
 ents = doc.ents
-print(ents)
+
 for ent in ents:
     new_label = f"{ent.label_} ({ent._.ent_score:.0%})"
     options["colors"][new_label] = options["colors"].get(ent.label_.lower(), None)
@@ -47,5 +47,11 @@ for ent in ents:
     ent.label_ = new_label
 doc.ents = ents
 
-displacy.render(doc, style="ent", options=options)
-#displacy.serve(doc, style='ent', options=options)
+# Construction 2
+from spacy.tokens import Doc
+
+words = ["hello", "world", "!"]
+spaces = [True, False, False]
+doc = Doc(nlp.vocab, words=words, spaces=spaces)
+
+print(doc)
